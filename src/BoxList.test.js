@@ -1,5 +1,6 @@
 import React from "react"; 
 import {render, fireEvent} from "@testing-library/react";
+import '@testing-library/jest-dom';
 import BoxList from "./BoxList";
 
 it("renders without crashing", function () {
@@ -12,15 +13,15 @@ it("matches snapshot", function () {
 })
 
 it("should add new box", function () {
-    const {queryByText, getByPlaceholder} = render(<BoxList />)
-    const colorInput = getByPlaceholder("Box Color");
-    const widthInput = getByPlaceholder("Width");
-    const heightInput = getByPlaceholder("Height");
+    const {queryByText, getByPlaceholderText, getAllByTestId} = render(<BoxList />)
+    const colorInput = getByPlaceholderText("Box Color");
+    const widthInput = getByPlaceholderText("Width");
+    const heightInput = getByPlaceholderText("Height");
     const btn = queryByText("Add Box");
-    // expect(queryByText('Make breakfast')).not.toBeInTheDocument();
+    expect(getAllByTestId("tester").length).toBe(2);
     fireEvent.change(colorInput, {target: {value: '#8A2BE2'}})
     fireEvent.change(widthInput, {target: {value: '50'}})
     fireEvent.change(heightInput, {target: {value: '50'}})
     fireEvent.click(btn);
-    // expect(queryByText('Make breakfast')).toBeInTheDocument();
+    expect(getAllByTestId("tester").length).toBe(3);
 })

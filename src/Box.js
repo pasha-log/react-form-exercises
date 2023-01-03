@@ -3,8 +3,8 @@ import React from 'react';
 const Box = ({ id, color, width, height, deleteBox }) => {
     const styles = {
         backgroundColor: color,
-        width: width,
-		height: height,
+        width: parseInt(width),
+		height: parseInt(height),
     }
 	return (
 			<ul>
@@ -12,8 +12,8 @@ const Box = ({ id, color, width, height, deleteBox }) => {
                     <div 
                         style={styles}
                         id={id} 
-                        // key={id}
-                        >
+                        key={id}
+                        data-testid={'tester'}                        >
 					</div>
 					<button onClick={() => deleteBox(id)}>X</button>
 				</li>

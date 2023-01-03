@@ -26,7 +26,7 @@ exports[`matches snapshot 1`] = `
     <div>
       <ul>
         <li
-          id="ae49d4f7-84cf-465f-91a7-f7c4a43ed091"
+          id="39901831-27ca-4b22-993b-f1abbba2dc6f"
         >
           Feed the cat
           <button>
@@ -36,7 +36,7 @@ exports[`matches snapshot 1`] = `
       </ul>
       <ul>
         <li
-          id="148dcbd3-14bf-444d-ade3-9be46f99b614"
+          id="a5e3b490-33c8-495e-9a40-80ec80c47360"
         >
           Work on motorcycle
           <button>
